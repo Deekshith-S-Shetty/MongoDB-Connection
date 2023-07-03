@@ -1,34 +1,33 @@
-const app = require("./app.js");
-const { MongoClient } = require("mongodb");
+const express = require("express");
+const cors = require("cors");
+const restaurants = require("./api/restaurants.route");
 
-const dbName = "sample_restaurants";
-const collectionName = "restaurants";
+const app = express();
 
+//configure .env file
 const dotenv = require("dotenv");
-
 dotenv.config();
 
 const PORT = process.env.PORT || 5000;
-const URI = process.env.URI;
 
-async function connectToDB() {
+//Get database connection file.
+const { connectToDB } = require("./db/conn");
 
-    const client = new MongoClient(URI);
-    await client.connect();
+//Cors help in connection (by skipping origin policy).
+app.use(cors());
 
-    const database = client.db(dbName);
-    const collection = database.collection(collectionName);
+//Accept & read json from requests.
+app.use(express.json());
 
-    try {
-        const cursor = await collection.find({cuisine:"American"});
-        await cursor.forEach(recipe => {
-            console.log(recipe);
-        })
-    }
-    catch (err) {
-        console.log("An error Occurred " + err.message);
-    }
-}
+//Listen on port and connect to DB.
+app.listen(PORT, () => {
+  connectToDB();
+  console.log(`server running on port : ${PORT}`);
+});
 
-connectToDB();
+//Request to "/api/restaurants" route will be handled by "restaurants.route.js" file.
+app.use("/api/restaurants", restaurants);
 
+app.use("*", (req, res) => {
+  res.status(404).json({ error: "Not Found" });
+});
