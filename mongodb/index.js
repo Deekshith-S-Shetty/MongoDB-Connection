@@ -1,12 +1,12 @@
 const express = require("express");
 const cors = require("cors");
-const restaurants = require("./api/restaurants.route");
-
 const app = express();
 
 //configure .env file
 const dotenv = require("dotenv");
 dotenv.config();
+
+const restaurants = require("./api/restaurants.route");
 
 const PORT = process.env.PORT || 5000;
 
