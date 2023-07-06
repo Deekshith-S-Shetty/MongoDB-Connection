@@ -21,7 +21,7 @@ To get started with the project, follow these steps:
 
    Replace `<username>` and `<password>` in the `URI` with your MongoDB username and password. The name of the database used here is `sample_restaurants`.
 
-5. Start the server by running `node server.js`.
+5. Start the server by running `npm start` or `node index.js`.
 
 ## Database Schema
 
