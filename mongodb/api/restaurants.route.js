@@ -9,8 +9,8 @@ const router = express.Router();
 
 router.route("/").get(getRestaurants);
 router.route("/id/:id").get(getRestaurantsById);
-router.route("/add").get(addRestaurants);
-router.route("/update").get(updateRestaurants);
-router.route("/delete/:id").get(deleteRestaurants);
+router.route("/add").post(addRestaurants);
+router.route("/update").post(updateRestaurants);
+router.route("/delete/:id").delete(deleteRestaurants);
 
 module.exports = router;

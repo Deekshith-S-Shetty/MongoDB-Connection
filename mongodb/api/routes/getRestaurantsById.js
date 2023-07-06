@@ -3,8 +3,8 @@ const ObjectId = require("mongodb").ObjectId;
 
 module.exports = async function getRestaurantsById(req, res) {
   const db_connection = dbo.getDB();
-  let id = req.params.id || {};
   try {
+    let id = req.params.id || {};
     const result = await db_connection
       .collection("restaurants")
       .findOne({ _id: new ObjectId(id) });
