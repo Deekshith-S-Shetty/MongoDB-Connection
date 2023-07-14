@@ -3,11 +3,10 @@ const dbo = require("../../db/conn");
 module.exports = async function addRestaurants(req, res) {
   let db_connection = dbo.getDB();
   try {
-    // Take the inputs for query from the request body (req.body.input).
     let myQuery = {
-      name: "Some name",
-      restaurant_id: "111",
-      extra_field: "Some Extra Field",
+      name: req.body.name,
+      restaurant_id: req.body.id,
+      rating: req.body.rating,
     };
 
     const result = await db_connection

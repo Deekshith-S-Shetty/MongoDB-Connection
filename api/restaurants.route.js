@@ -10,7 +10,7 @@ const router = express.Router();
 router.route("/").get(getRestaurants);
 router.route("/id/:id").get(getRestaurantsById);
 router.route("/add").post(addRestaurants);
-router.route("/update").post(updateRestaurants);
+router.route("/update/:id").post(updateRestaurants);
 router.route("/delete/:id").delete(deleteRestaurants);
 
 module.exports = router;

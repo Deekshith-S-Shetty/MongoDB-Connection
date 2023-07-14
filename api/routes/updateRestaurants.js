@@ -4,12 +4,11 @@ const ObjectId = require("mongodb").ObjectId;
 module.exports = async function updateRestaurants(req, res) {
   const db_connection = dbo.getDB();
   try {
-    // Generally get the update and query values from request body (req.body.value) or request parameter.
-    let myQuery = { _id: new ObjectId("64a5a435c32247987993797e") };
+    let myQuery = { _id: new ObjectId(req.params.id) };
     let setValues = {
-      name: "updated name",
-      restaurant_id: "222",
-      extra_field: "updated extra field",
+      name: req.body.name,
+      restaurant_id: req.body.id,
+      rating: req.body.rating,
     };
 
     let result = await db_connection

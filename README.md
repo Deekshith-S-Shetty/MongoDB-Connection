@@ -1,8 +1,8 @@
 # MongoDB Connection
 
-This project utilizes Node.js and MongoDB to create powerful endpoints for performing CRUD operations, facilitating efficient data management 
-and interaction with the database. It offers a seamless integration between the Node.js backend and MongoDB, allowing developers to easily 
-handle data storage, retrieval, updating, and deletion. With its straightforward setup process and flexible database schema, this project 
+This project utilizes Node.js and MongoDB to create powerful endpoints for performing CRUD operations, facilitating efficient data management
+and interaction with the database. It offers a seamless integration between the Node.js backend and MongoDB, allowing developers to easily
+handle data storage, retrieval, updating, and deletion. With its straightforward setup process and flexible database schema, this project
 can be used to build robust applications that leverage the full potential of Node.js and MongoDB.
 
 ## Getting Started
@@ -31,13 +31,14 @@ The database schema used in this project is as follows:
 {
   "name": "string",
   "restaurant_id": "int",
-  "extra_field": "string"
+  "rating": "int"
 }
 ```
 
 Note that MongoDB automatically generates an ID for each inserted data.
 
 ## Contributing
+
 If you'd like to contribute to this project, we welcome your contributions! To ensure a smooth collaboration, please follow these guidelines:
 
 1. Fork the repository on GitHub.
@@ -46,8 +47,9 @@ If you'd like to contribute to this project, we welcome your contributions! To e
 4. Commit your changes to the new branch.
 5. Push the branch to your fork.
 6. Submit a pull request to the main repository, explaining your changes.
-   
+
 ## Bug Reporting
+
 We appreciate your help in improving this project by reporting any bugs you encounter. When reporting a bug, please provide the following information:
 
 1. A clear and descriptive title for the bug report.
@@ -55,11 +57,11 @@ We appreciate your help in improving this project by reporting any bugs you enco
 3. Expected behavior and actual behavior observed.
 4. Any relevant error messages or screenshots.
 5. Any additional context or information that might be helpful in understanding and fixing the bug.
-   
+
 Thank you for your valuable contributions!
 
 ## Helpful Links
-* [MongoDB](https://www.mongodb.com/docs/)
-* [Node.js](https://nodejs.org/en/docs/)
-* [Express.js](https://expressjs.com/en/starter/hello-world.html/)
-  
+
+- [MongoDB](https://www.mongodb.com/docs/)
+- [Node.js](https://nodejs.org/en/docs/)
+- [Express.js](https://expressjs.com/en/starter/hello-world.html/)
